@@ -1,6 +1,6 @@
 # MCDR-AutoCleaner
 
-一个适用于 [MCDReforge](https://github.com/Fallen-Breath/MCDReforged) 的自动扫地机插件.
+一个适用于 [MCDReforge](https://github.com/Fallen-Breath/MCDReforged)(version >= 0.7.0) 的自动扫地机插件.
 
 需要 [MinecraftInfoAPI](https://github.com/Forgot-Dream/MinecraftItemAPI) 作为前置.
 
