@@ -22,9 +22,9 @@ HelpMessage = '''
 §7''' + Prefix + ''' stop §r停止运行
 §7''' + Prefix + ''' killall §r立即清理物品
 §7''' + Prefix + ''' status §r显示当前扫地机状态
-§7''' + Prefix + ''' whilelist add <物品> §r添加<物品>进入白名单
-§7''' + Prefix + ''' whilelist remove <物品> §r从白名单中删除<物品>
-§7''' + Prefix + ''' whilelist list §r显示白名单中已有的物品'''
+§7''' + Prefix + ''' whitelist add <物品> §r添加<物品>进入白名单
+§7''' + Prefix + ''' whitelist remove <物品> §r从白名单中删除<物品>
+§7''' + Prefix + ''' whitelist list §r显示白名单中已有的物品'''
 
 #帮助信息
 def help_message(server ,info):
