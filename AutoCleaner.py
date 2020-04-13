@@ -2,6 +2,7 @@
 import copy
 import time
 import json
+import os
 
 Prefix = '!!ac'
 stop = False
@@ -32,6 +33,10 @@ def help_message(server ,info):
 #MCDR-帮助信息
 def on_load(server ,old):
     server.add_help_message('!!ac','定时清理器')
+    if not os.path.isfile(ConfigFilePath):
+        with open(ConfigFilePath, 'w+') as f:
+            f.write('[{"item_name": []}]')
+            f.close()
     
     
 #插件退出
@@ -128,7 +133,7 @@ def on_info(server ,info):
                     name = lines[i].replace('\n', '').replace('\r', '')
                     server.tell(info.player,'§e' + name)
         elif command [1] == 'add' and len(command) == 3:
-            api = server.get_plugin_instance('MinecraftItemAPI')
+            api = server.get_plugin_instance('MinecraftItemAPI') #从MinecraftItemAPI获取物品信息
             if api.getMinecraftItemInfo(command[2]):
                 with open(ConfigFilePath, 'r') as f:
                     js = json.load(f)
