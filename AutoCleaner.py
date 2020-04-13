@@ -34,6 +34,7 @@ def help_message(server ,info):
 def on_load(server ,old):
     server.add_help_message('!!ac','定时清理器')
     if not os.path.isfile(ConfigFilePath):
+        server.logger.info('[AutoC/WARN] 未找到配置文件，已自动生成')
         with open(ConfigFilePath, 'w+') as f:
             f.write('[{"item_name": []}]')
             f.close()
@@ -75,12 +76,13 @@ def on_info(server ,info):
         item_counter = False
         
         
-    if not info.is_player and content.endswith('<--[HERE]'):
-	    content = content.replace('<--[HERE]', '')
-                
     if len(command) == 0 or command[0] != Prefix:
         return
     del command[0]
+    
+    #检测是否为玩家或者控制台输入
+    if not info.is_user:
+        return
     
     #命令提示
     if len(command) == 0:
@@ -191,7 +193,7 @@ def ac_stop(server ,info):
         server.tell(info.player,'§7[§9AutoC§r/§cERROR§7] §b扫地机未开启')
 
     #NBT格式写入
-def get_exception(name):
+def get_nbt(name):
     return ',nbt=!{Item:{id:"minecraft:' + name + '"}}'
     
     #清理计时
@@ -224,7 +226,7 @@ def kill_item(server):
         
         for i in range(len(lines)):
             name = lines[i].replace('\n', '').replace('\r', '')
-            cmd = cmd + get_exception(name)
+            cmd = cmd + get_nbt(name)
     cmd = cmd + ']'
     server.execute(cmd)
     item_counter = True
