@@ -2,7 +2,7 @@
 
 一个适用于 [MCDReforge](https://github.com/Fallen-Breath/MCDReforged)(version >= 0.7.0) 的自动扫地机插件.
 
-需要 [MinecraftInfoAPI](https://github.com/Forgot-Dream/MinecraftItemAPI) 作为前置.
+需要 [MinecraftItemAPI](https://github.com/Forgot-Dream/MinecraftItemAPI) 作为前置.
 
 ## Feature / 特性
 
