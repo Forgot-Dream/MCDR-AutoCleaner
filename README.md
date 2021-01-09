@@ -1,3 +1,5 @@
+# 本项目不再更新。
+
 # MCDR-AutoCleaner
 
 一个适用于 [MCDReforged](https://github.com/Fallen-Breath/MCDReforged)(version >= 0.7.0)  的自动扫地机插件.
